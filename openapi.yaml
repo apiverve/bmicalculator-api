@@ -1,0 +1,84 @@
+openapi: 3.0.4
+info:
+  title: BMI Calculator
+  description: BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/bmicalculator:
+    get:
+      summary: Calculate Body Mass Index
+      description: BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+      operationId: bmicalculator
+      parameters:
+      - name: weight
+        in: query
+        schema:
+          type: number
+        required: true
+        description: The weight of the person in either kg or lb
+        example: '70'
+      - name: height
+        in: query
+        schema:
+          type: number
+        required: true
+        description: The height of the person in cm or ft
+        example: '170'
+      - name: unit
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The unit of measurement for weight and height (metric or imperial)
+        example: metric
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  height: 170 cm
+                  weight: 70 kg
+                  bmi: 24.2214532871972
+                  risk: Low risk
+                  summary: This weight is normal and you are healthy.
+                  recommendation: A BMI between 18.5 and 24.9 falls within the 'normal' weight range according to the World Health Organization. This range is associated with the lowest health risk for conditions such as heart disease, diabetes, and certain cancers. However, it's important to note that BMI is not a perfect measure as it does not account for muscle mass, bone density, overall body composition, and racial and sex differences. Therefore, while it's a useful starting point, it should not be the only measure of one's health.
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
