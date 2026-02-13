@@ -1,46 +1,48 @@
 openapi: 3.0.4
 info:
   title: BMI Calculator
-  description: BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+  description: >-
+    BMI Calculator is a simple tool for calculating body mass index. It returns
+    the calculated BMI based on the weight and height provided.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/bmicalculator:
     get:
       summary: Calculate Body Mass Index
-      description: BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+      description: Calculate body mass index based on weight and height
       operationId: bmicalculator
       parameters:
-      - name: weight
-        in: query
-        schema:
-          type: number
-        required: true
-        description: The weight of the person in either kg or lb
-        example: '70'
-      - name: height
-        in: query
-        schema:
-          type: number
-        required: true
-        description: The height of the person in cm or ft
-        example: '170'
-      - name: unit
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The unit of measurement for weight and height (metric or imperial)
-        example: metric
+        - name: weight
+          in: query
+          schema:
+            type: number
+          required: true
+          description: The weight of the person in either kg or lb
+          example: 70
+        - name: height
+          in: query
+          schema:
+            type: number
+          required: true
+          description: The height of the person in cm or ft
+          example: 170
+        - name: unit
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The unit of measurement for weight and height
+          example: metric
       responses:
         '200':
           description: Successful Response
@@ -56,24 +58,33 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   height: 170 cm
                   weight: 70 kg
-                  bmi: 24.2214532871972
+                  bmi: 24.221453287197235
                   risk: Low risk
                   summary: This weight is normal and you are healthy.
-                  recommendation: A BMI between 18.5 and 24.9 falls within the 'normal' weight range according to the World Health Organization. This range is associated with the lowest health risk for conditions such as heart disease, diabetes, and certain cancers. However, it's important to note that BMI is not a perfect measure as it does not account for muscle mass, bone density, overall body composition, and racial and sex differences. Therefore, while it's a useful starting point, it should not be the only measure of one's health.
+                  recommendation: >-
+                    A BMI between 18.5 and 24.9 falls within the 'normal' weight
+                    range according to the World Health Organization. This range
+                    is associated with the lowest health risk for conditions
+                    such as heart disease, diabetes, and certain cancers.
+                    However, it's important to note that BMI is not a perfect
+                    measure as it does not account for muscle mass, bone
+                    density, overall body composition, and racial and sex
+                    differences. Therefore, while it's a useful starting point,
+                    it should not be the only measure of one's health.
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -81,4 +92,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
