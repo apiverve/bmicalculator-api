@@ -13,14 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/bmicalculator';
  */
 async function callBMICalculatorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            weight: 70,
-            height: 170,
-            unit: &#x27;metric&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
