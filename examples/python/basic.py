@@ -17,14 +17,11 @@ def call_bmicalculator_api():
     Make a GET request to the BMI Calculator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;weight&#x27;: 70, &#x27;height&#x27;: 170, &#x27;unit&#x27;: &#x27;metric&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
