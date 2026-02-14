@@ -12,21 +12,18 @@ namespace APIVerve.API.BMICalculator
     {
         /// <summary>
         /// The weight of the person in either kg or lb
-        /// Example: 70
         /// </summary>
         [JsonProperty("weight")]
         public string Weight { get; set; }
 
         /// <summary>
         /// The height of the person in cm or ft
-        /// Example: 170
         /// </summary>
         [JsonProperty("height")]
         public string Height { get; set; }
 
         /// <summary>
-        /// The unit of measurement for weight and height (metric or imperial)
-        /// Example: metric
+        /// The unit of measurement for weight and height
         /// </summary>
         [JsonProperty("unit")]
         public string Unit { get; set; }
