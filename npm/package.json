@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/bmicalculator",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.",
   "main": "index.js",
   "types": "index.d.ts",
