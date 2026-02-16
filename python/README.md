@@ -44,7 +44,11 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 ```
 
 ###### Simple Request
@@ -125,7 +133,11 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, Bmicalculat
 
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 
 try:
     result = api.execute(query)
@@ -146,7 +158,11 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, Bmicalculat
 
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 
 try:
     result = api.execute(query)
@@ -180,7 +196,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, BmicalculatorAPIClientError
 
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 
 # Using context manager ensures proper cleanup
 with BmicalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -206,7 +226,11 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 # Enable debug mode
 api = BmicalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "weight": 70, "height": 170, "unit": "metric" }
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -221,8 +245,13 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "weight": 70,
+    "height": 170,
+    "unit": "metric"
+}
+
 try:
-    query = { "weight": 70, "height": 170, "unit": "metric" }
     result = api.execute(query)
     print(result)
 finally:
