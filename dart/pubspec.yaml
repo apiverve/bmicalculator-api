@@ -1,6 +1,6 @@
 name: apiverve_bmicalculator
 description: BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
-version: 1.1.13
+version: 1.1.14
 homepage: https://apiverve.com/marketplace/bmicalculator?utm_source=dart&utm_medium=homepage
 repository: https://github.com/apiverve/bmicalculator-api/tree/main/dart
 
