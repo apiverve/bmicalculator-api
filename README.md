@@ -1,6 +1,6 @@
 # [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
-BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
 
 The BMI Calculator API provides a simple, reliable way to integrate bmi calculator functionality into your applications. Built for developers who need production-ready bmi calculator capabilities without the complexity of building from scratch.
 
@@ -30,7 +30,16 @@ The BMI Calculator API provides a simple, reliable way to integrate bmi calculat
 ```javascript
 async function callBMICalculatorAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/bmicalculator', {
+        const params = new URLSearchParams({
+            weight: 180,
+            height: 70,
+            unit: 'imperial',
+            age: 30,
+            gender: 'male',
+            activityLevel: 'moderate'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/bmicalculator?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +59,7 @@ callBMICalculatorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/bmicalculator?param=value" \
+curl -X GET "https://api.apiverve.com/v1/bmicalculator?weight=180&height=70&unit=imperial&age=30&gender=male&activityLevel=moderate" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +159,7 @@ go get github.com/apiverve/bmicalculator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +178,7 @@ go get github.com/apiverve/bmicalculator-api/go
 The BMI Calculator API is commonly used for:
 
 - **Web Applications** - Add bmi calculator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with bmi calculator capabilities
 - **Data Pipelines** - Process and analyze data at scale
