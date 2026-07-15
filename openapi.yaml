@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: BMI Calculator
   description: >-
-    BMI Calculator is a simple tool for calculating body mass index. It returns
-    the calculated BMI based on the weight and height provided.
+    BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR
+    (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie
+    targets, and macronutrient recommendations for fitness and health
+    applications.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,8 +20,8 @@ servers:
 paths:
   /v1/bmicalculator:
     get:
-      summary: Calculate Body Mass Index
-      description: Calculate body mass index based on weight and height
+      summary: Calculate BMI and Fitness Metrics
+      description: Calculate BMI, ideal weight, BMR, TDEE, calorie targets and macros
       operationId: bmicalculator
       parameters:
         - name: weight
@@ -27,22 +29,43 @@ paths:
           schema:
             type: number
           required: true
-          description: The weight of the person in either kg or lb
-          example: 70
+          description: Weight in kg (metric) or lbs (imperial)
+          example: 180
         - name: height
           in: query
           schema:
             type: number
           required: true
-          description: The height of the person in cm or ft
-          example: 170
+          description: Height in cm (metric) or inches (imperial)
+          example: 70
         - name: unit
           in: query
           schema:
             type: string
           required: true
-          description: The unit of measurement for weight and height
-          example: metric
+          description: Unit system for weight and height
+          example: imperial
+        - name: age
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Age in years (required for BMR/TDEE calculations)
+          example: 30
+        - name: gender
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Gender (required for BMR/TDEE calculations)
+          example: male
+        - name: activityLevel
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Activity level (required for TDEE/calorie calculations)
+          example: moderate
       responses:
         '200':
           description: Successful Response
