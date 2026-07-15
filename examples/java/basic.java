@@ -12,8 +12,17 @@ public class BasicExample {
         BMICalculatorAPIClient client = new BMICalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;weight&quot;, 180);
+        parameters.put(&quot;height&quot;, 70);
+        parameters.put(&quot;unit&quot;, &quot;imperial&quot;);
+        parameters.put(&quot;age&quot;, 30);
+        parameters.put(&quot;gender&quot;, &quot;male&quot;);
+        parameters.put(&quot;activityLevel&quot;, &quot;moderate&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
