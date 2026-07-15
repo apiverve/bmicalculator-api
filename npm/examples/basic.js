@@ -15,9 +15,12 @@ const api = new bmicalculatorAPI({
 
 // Example query
 var query = {
-  weight: 70,
-  height: 170,
-  unit: "metric"
+  weight: 180,
+  height: 70,
+  unit: "imperial",
+  age: 30,
+  gender: "male",
+  activityLevel: "moderate"
 };
 
 // Make the API request using callback
