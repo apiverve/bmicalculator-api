@@ -4,21 +4,33 @@ declare module '@apiverve/bmicalculator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface bmicalculatorResponse {
     status: string;
     error: string | null;
     data: BMICalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface BMICalculatorData {
-      height:         string;
-      weight:         string;
-      bmi:            number;
-      risk:           string;
-      summary:        string;
-      recommendation: string;
+      height:         null | string;
+      weight:         null | string;
+      bmi:            number | null;
+      risk:           null | string;
+      summary:        null | string;
+      recommendation: null | string;
   }
 
   export default class bmicalculatorWrapper {
