@@ -11,21 +11,39 @@ namespace APIVerve.API.BMICalculator
     public class BMICalculatorQueryOptions
     {
         /// <summary>
-        /// The weight of the person in either kg or lb
+        /// Weight in kg (metric) or lbs (imperial)
         /// </summary>
         [JsonProperty("weight")]
-        public string Weight { get; set; }
+        public double Weight { get; set; }
 
         /// <summary>
-        /// The height of the person in cm or ft
+        /// Height in cm (metric) or inches (imperial)
         /// </summary>
         [JsonProperty("height")]
-        public string Height { get; set; }
+        public double Height { get; set; }
 
         /// <summary>
-        /// The unit of measurement for weight and height
+        /// Unit system for weight and height
         /// </summary>
         [JsonProperty("unit")]
         public string Unit { get; set; }
+
+        /// <summary>
+        /// Age in years (required for BMR/TDEE calculations)
+        /// </summary>
+        [JsonProperty("age")]
+        public double? Age { get; set; }
+
+        /// <summary>
+        /// Gender (required for BMR/TDEE calculations)
+        /// </summary>
+        [JsonProperty("gender")]
+        public string Gender { get; set; }
+
+        /// <summary>
+        /// Activity level (required for TDEE/calorie calculations)
+        /// </summary>
+        [JsonProperty("activityLevel")]
+        public string ActivityLevel { get; set; }
     }
 }
