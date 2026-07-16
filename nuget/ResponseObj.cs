@@ -25,6 +25,9 @@ namespace APIVerve.API.BMICalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,7 +39,7 @@ namespace APIVerve.API.BMICalculator
         public string Weight { get; set; }
 
         [JsonProperty("bmi")]
-        public double Bmi { get; set; }
+        public double? Bmi { get; set; }
 
         [JsonProperty("risk")]
         public string Risk { get; set; }
@@ -46,5 +49,17 @@ namespace APIVerve.API.BMICalculator
 
         [JsonProperty("recommendation")]
         public string Recommendation { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
