@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/bmicalculator",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/bmicalculator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/bmicalculator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/bmicalculator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",

@@ -25,12 +25,51 @@ declare module '@apiverve/bmicalculator' {
 
 
   interface BMICalculatorData {
-      height:         null | string;
-      weight:         null | string;
-      bmi:            number | null;
-      risk:           null | string;
-      summary:        null | string;
-      recommendation: null | string;
+      height:           null | string;
+      weight:           null | string;
+      bmi:              number | null;
+      bmiPrime:         number | null;
+      category:         null | string;
+      risk:             null | string;
+      summary:          null | string;
+      idealWeightRange: IdealWeightRange;
+      weightToChange:   WeightToChange;
+      bmr:              number | null;
+      tdee:             number | null;
+      calorieTargets:   CalorieTargets;
+      macros:           Macros;
+  }
+  
+  interface CalorieTargets {
+      extremeDeficit:  number | null;
+      moderateDeficit: number | null;
+      maintain:        number | null;
+      moderateSurplus: number | null;
+      bulkSurplus:     number | null;
+  }
+  
+  interface IdealWeightRange {
+      min:  number | null;
+      max:  number | null;
+      unit: null | string;
+  }
+  
+  interface Macros {
+      lose:     Gain;
+      maintain: Gain;
+      gain:     Gain;
+  }
+  
+  interface Gain {
+      protein: number | null;
+      carbs:   number | null;
+      fat:     number | null;
+  }
+  
+  interface WeightToChange {
+      direction: null | string;
+      amount:    number | null;
+      unit:      null | string;
   }
 
   export default class bmicalculatorWrapper {
