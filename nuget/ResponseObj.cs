@@ -41,14 +41,101 @@ namespace APIVerve.API.BMICalculator
         [JsonProperty("bmi")]
         public double? Bmi { get; set; }
 
+        [JsonProperty("bmiPrime")]
+        public double? BmiPrime { get; set; }
+
+        [JsonProperty("category")]
+        public string Category { get; set; }
+
         [JsonProperty("risk")]
         public string Risk { get; set; }
 
         [JsonProperty("summary")]
         public string Summary { get; set; }
 
-        [JsonProperty("recommendation")]
-        public string Recommendation { get; set; }
+        [JsonProperty("idealWeightRange")]
+        public IdealWeightRange IdealWeightRange { get; set; }
+
+        [JsonProperty("weightToChange")]
+        public WeightToChange WeightToChange { get; set; }
+
+        [JsonProperty("bmr")]
+        public long? Bmr { get; set; }
+
+        [JsonProperty("tdee")]
+        public long? Tdee { get; set; }
+
+        [JsonProperty("calorieTargets")]
+        public CalorieTargets CalorieTargets { get; set; }
+
+        [JsonProperty("macros")]
+        public Macros Macros { get; set; }
+    }
+
+    public partial class CalorieTargets
+    {
+        [JsonProperty("extremeDeficit")]
+        public long? ExtremeDeficit { get; set; }
+
+        [JsonProperty("moderateDeficit")]
+        public long? ModerateDeficit { get; set; }
+
+        [JsonProperty("maintain")]
+        public long? Maintain { get; set; }
+
+        [JsonProperty("moderateSurplus")]
+        public long? ModerateSurplus { get; set; }
+
+        [JsonProperty("bulkSurplus")]
+        public long? BulkSurplus { get; set; }
+    }
+
+    public partial class IdealWeightRange
+    {
+        [JsonProperty("min")]
+        public long? Min { get; set; }
+
+        [JsonProperty("max")]
+        public double? Max { get; set; }
+
+        [JsonProperty("unit")]
+        public string Unit { get; set; }
+    }
+
+    public partial class Macros
+    {
+        [JsonProperty("lose")]
+        public Gain Lose { get; set; }
+
+        [JsonProperty("maintain")]
+        public Gain Maintain { get; set; }
+
+        [JsonProperty("gain")]
+        public Gain Gain { get; set; }
+    }
+
+    public partial class Gain
+    {
+        [JsonProperty("protein")]
+        public long? Protein { get; set; }
+
+        [JsonProperty("carbs")]
+        public long? Carbs { get; set; }
+
+        [JsonProperty("fat")]
+        public long? Fat { get; set; }
+    }
+
+    public partial class WeightToChange
+    {
+        [JsonProperty("direction")]
+        public string Direction { get; set; }
+
+        [JsonProperty("amount")]
+        public double? Amount { get; set; }
+
+        [JsonProperty("unit")]
+        public string Unit { get; set; }
     }
 
     public partial class Premium

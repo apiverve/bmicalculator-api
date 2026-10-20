@@ -1,13 +1,12 @@
-BMICalculator API
+BMI Calculator API
 ============
 
 BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [BMICalculator API](https://apiverve.com/marketplace/bmicalculator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.BMICalculator.svg)](https://www.nuget.org/packages/APIVerve.API.BMICalculator)
+
+This is a .NET wrapper for the [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the bmicalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the BMI Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,13 +60,13 @@ class Program
         var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BMICalculatorQueryOptions {
-    Weight = 180,
-    Height = 70,
-    Unit = "imperial",
-    Age = 30,
-    Gender = "male",
-    ActivityLevel = "moderate"
-};
+            Weight = 180,
+            Height = 70,
+            Unit = "imperial",
+            Age = 30,
+            Gender = "male",
+            ActivityLevel = "moderate"
+        };
 
         // Make the API call
         try
@@ -97,13 +96,13 @@ class Program
 
 ## Usage
 
-The BMICalculator API documentation is found here: [https://docs.apiverve.com/ref/bmicalculator](https://docs.apiverve.com/ref/bmicalculator?utm_source=nuget&utm_medium=readme).
+The BMI Calculator API documentation is found here: [https://docs.apiverve.com/ref/bmicalculator](https://docs.apiverve.com/ref/bmicalculator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-BMICalculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+BMI Calculator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -130,13 +129,13 @@ public class Example
         var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BMICalculatorQueryOptions {
-    Weight = 180,
-    Height = 70,
-    Unit = "imperial",
-    Age = 30,
-    Gender = "male",
-    ActivityLevel = "moderate"
-};
+            Weight = 180,
+            Height = 70,
+            Unit = "imperial",
+            Age = 30,
+            Gender = "male",
+            ActivityLevel = "moderate"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -167,13 +166,13 @@ public class Example
         var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BMICalculatorQueryOptions {
-    Weight = 180,
-    Height = 70,
-    Unit = "imperial",
-    Age = 30,
-    Gender = "male",
-    ActivityLevel = "moderate"
-};
+            Weight = 180,
+            Height = 70,
+            Unit = "imperial",
+            Age = 30,
+            Gender = "male",
+            ActivityLevel = "moderate"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -209,13 +208,13 @@ public class Example
         var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new BMICalculatorQueryOptions {
-    Weight = 180,
-    Height = 70,
-    Unit = "imperial",
-    Age = 30,
-    Gender = "male",
-    ActivityLevel = "moderate"
-};
+            Weight = 180,
+            Height = 70,
+            Unit = "imperial",
+            Age = 30,
+            Gender = "male",
+            ActivityLevel = "moderate"
+        };
 
         try
         {
@@ -270,13 +269,13 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new BMICalculatorQueryOptions {
-    Weight = 180,
-    Height = 70,
-    Unit = "imperial",
-    Age = 30,
-    Gender = "male",
-    ActivityLevel = "moderate"
-};
+            Weight = 180,
+            Height = 70,
+            Unit = "imperial",
+            Age = 30,
+            Gender = "male",
+            ActivityLevel = "moderate"
+        };
 
         try
         {
@@ -412,12 +411,49 @@ using (var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "height": "170 cm",
-    "weight": "70 kg",
-    "bmi": 24.221453287197235,
-    "risk": "Low risk",
-    "summary": "This weight is normal and you are healthy.",
-    "recommendation": "A BMI between 18.5 and 24.9 falls within the 'normal' weight range according to the World Health Organization. This range is associated with the lowest health risk for conditions such as heart disease, diabetes, and certain cancers. However, it's important to note that BMI is not a perfect measure as it does not account for muscle mass, bone density, overall body composition, and racial and sex differences. Therefore, while it's a useful starting point, it should not be the only measure of one's health."
+    "height": "70 inches",
+    "weight": "180 lbs",
+    "bmi": 25.83,
+    "bmiPrime": 1.033,
+    "category": "Overweight",
+    "risk": "Increased risk",
+    "summary": "BMI is above the healthy range. Lifestyle changes may be beneficial.",
+    "idealWeightRange": {
+      "min": 129,
+      "max": 173.5,
+      "unit": "lbs"
+    },
+    "weightToChange": {
+      "direction": "lose",
+      "amount": 6.5,
+      "unit": "lbs"
+    },
+    "bmr": 1783,
+    "tdee": 2763,
+    "calorieTargets": {
+      "extremeDeficit": 1763,
+      "moderateDeficit": 2263,
+      "maintain": 2763,
+      "moderateSurplus": 3063,
+      "bulkSurplus": 3263
+    },
+    "macros": {
+      "lose": {
+        "protein": 198,
+        "carbs": 198,
+        "fat": 75
+      },
+      "maintain": {
+        "protein": 207,
+        "carbs": 276,
+        "fat": 92
+      },
+      "gain": {
+        "protein": 230,
+        "carbs": 345,
+        "fat": 85
+      }
+    }
   }
 }
 ```
@@ -426,7 +462,7 @@ using (var apiClient = new BMICalculatorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -437,12 +473,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
