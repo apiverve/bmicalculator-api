@@ -1,13 +1,13 @@
-# [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
 
 The BMI Calculator API provides a simple, reliable way to integrate bmi calculator functionality into your applications. Built for developers who need production-ready bmi calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -166,7 +166,7 @@ go get github.com/apiverve/bmicalculator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/bmicalculator](https://docs.apiverve.com/ref/bmicalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -216,12 +216,49 @@ A real response from the BMI Calculator API:
   "status": "ok",
   "error": null,
   "data": {
-    "height": "170 cm",
-    "weight": "70 kg",
-    "bmi": 24.221453287197235,
-    "risk": "Low risk",
-    "summary": "This weight is normal and you are healthy.",
-    "recommendation": "A BMI between 18.5 and 24.9 falls within the 'normal' weight range according to the World Health Organization. This range is associated with the lowest health risk for conditions such as heart disease, diabetes, and certain cancers. However, it's important to note that BMI is not a perfect measure as it does not account for muscle mass, bone density, overall body composition, and racial and sex differences. Therefore, while it's a useful starting point, it should not be the only measure of one's health."
+    "height": "70 inches",
+    "weight": "180 lbs",
+    "bmi": 25.83,
+    "bmiPrime": 1.033,
+    "category": "Overweight",
+    "risk": "Increased risk",
+    "summary": "BMI is above the healthy range. Lifestyle changes may be beneficial.",
+    "idealWeightRange": {
+      "min": 129,
+      "max": 173.5,
+      "unit": "lbs"
+    },
+    "weightToChange": {
+      "direction": "lose",
+      "amount": 6.5,
+      "unit": "lbs"
+    },
+    "bmr": 1783,
+    "tdee": 2763,
+    "calorieTargets": {
+      "extremeDeficit": 1763,
+      "moderateDeficit": 2263,
+      "maintain": 2763,
+      "moderateSurplus": 3063,
+      "bulkSurplus": 3263
+    },
+    "macros": {
+      "lose": {
+        "protein": 198,
+        "carbs": 198,
+        "fat": 75
+      },
+      "maintain": {
+        "protein": 207,
+        "carbs": 276,
+        "fat": 92
+      },
+      "gain": {
+        "protein": 230,
+        "carbs": 345,
+        "fat": 85
+      }
+    }
   }
 }
 ```
@@ -230,7 +267,7 @@ A real response from the BMI Calculator API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
