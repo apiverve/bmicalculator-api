@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -26,7 +26,10 @@ class BmicalculatorAPIClient:
     VALIDATION_RULES = {
         "weight": {"type": "number", "required": True, "min": 1},
         "height": {"type": "number", "required": True, "min": 1},
-        "unit": {"type": "string", "required": True}
+        "unit": {"type": "string", "required": True},
+        "age": {"type": "number", "required": False, "min": 1, "max": 120},
+        "gender": {"type": "string", "required": False},
+        "activityLevel": {"type": "string", "required": False}
     }
 
     # Format validation patterns

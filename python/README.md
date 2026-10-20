@@ -1,13 +1,12 @@
 BMI Calculator API
 ============
 
-BMI Calculator is a simple tool for calculating body mass index. It returns the calculated BMI based on the weight and height provided.
+BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-bmicalculator.svg)](https://pypi.org/project/apiverve-bmicalculator/)
+
+This is a Python wrapper for the [BMI Calculator API](https://apiverve.com/marketplace/bmicalculator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-bmicalculator
 
 ## Configuration
 
-Before using the bmicalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the BMI Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -45,9 +44,12 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 try:
@@ -64,7 +66,7 @@ except Exception as e:
 
 ## Usage
 
-The BMI Calculator API documentation is found here: [https://docs.apiverve.com/ref/bmicalculator](https://docs.apiverve.com/ref/bmicalculator?utm_source=pypi&utm_medium=readme).
+The BMI Calculator API documentation is found here: [https://docs.apiverve.com/ref/bmicalculator](https://docs.apiverve.com/ref/bmicalculator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -87,9 +89,12 @@ Using the API client, you can perform requests to the API.
 
 ```python
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 ```
 
@@ -110,12 +115,49 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "height": "170 cm",
-    "weight": "70 kg",
-    "bmi": 24.221453287197235,
-    "risk": "Low risk",
-    "summary": "This weight is normal and you are healthy.",
-    "recommendation": "A BMI between 18.5 and 24.9 falls within the 'normal' weight range according to the World Health Organization. This range is associated with the lowest health risk for conditions such as heart disease, diabetes, and certain cancers. However, it's important to note that BMI is not a perfect measure as it does not account for muscle mass, bone density, overall body composition, and racial and sex differences. Therefore, while it's a useful starting point, it should not be the only measure of one's health."
+    "height": "70 inches",
+    "weight": "180 lbs",
+    "bmi": 25.83,
+    "bmiPrime": 1.033,
+    "category": "Overweight",
+    "risk": "Increased risk",
+    "summary": "BMI is above the healthy range. Lifestyle changes may be beneficial.",
+    "idealWeightRange": {
+      "min": 129,
+      "max": 173.5,
+      "unit": "lbs"
+    },
+    "weightToChange": {
+      "direction": "lose",
+      "amount": 6.5,
+      "unit": "lbs"
+    },
+    "bmr": 1783,
+    "tdee": 2763,
+    "calorieTargets": {
+      "extremeDeficit": 1763,
+      "moderateDeficit": 2263,
+      "maintain": 2763,
+      "moderateSurplus": 3063,
+      "bulkSurplus": 3263
+    },
+    "macros": {
+      "lose": {
+        "protein": 198,
+        "carbs": 198,
+        "fat": 75
+      },
+      "maintain": {
+        "protein": 207,
+        "carbs": 276,
+        "fat": 92
+      },
+      "gain": {
+        "protein": 230,
+        "carbs": 345,
+        "fat": 85
+      }
+    }
   }
 }
 ```
@@ -134,9 +176,12 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, Bmicalculat
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 try:
@@ -159,9 +204,12 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, Bmicalculat
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 try:
@@ -197,9 +245,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient, BmicalculatorAPIClientError
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 # Using context manager ensures proper cleanup
@@ -227,9 +278,12 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 api = BmicalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 # Debug information will be printed to console
@@ -246,9 +300,12 @@ from apiverve_bmicalculator.apiClient import BmicalculatorAPIClient
 api = BmicalculatorAPIClient("[YOUR_API_KEY]")
 
 query = {
-    "weight": 70,
-    "height": 170,
-    "unit": "metric"
+    "weight": 180,
+    "height": 70,
+    "unit": "imperial",
+    "age": 30,
+    "gender": "male",
+    "activityLevel": "moderate"
 }
 
 try:
@@ -263,7 +320,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -274,12 +331,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
