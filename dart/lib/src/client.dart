@@ -46,12 +46,15 @@ final _formatPatterns = {
 
 /// BMI Calculator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/bmicalculator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/bmicalculator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [weight] (required) - The weight of the person in either kg or lb [min: 1]
-/// * [height] (required) - The height of the person in cm or ft [min: 1]
-/// * [unit] (required) - The unit of measurement for weight and height
+/// * [weight] (required) - Weight in kg (metric) or lbs (imperial) [min: 1]
+/// * [height] (required) - Height in cm (metric) or inches (imperial) [min: 1]
+/// * [unit] (required) - Unit system for weight and height
+/// * [age] - Age in years (required for BMR/TDEE calculations) [min: 1, max: 120]
+/// * [gender] - Gender (required for BMR/TDEE calculations)
+/// * [activityLevel] - Activity level (required for TDEE/calorie calculations)
 class BmicalculatorClient {
   final String apiKey;
   final String baseUrl;
@@ -62,6 +65,9 @@ class BmicalculatorClient {
     'weight': ValidationRule(type: 'number', required: true, min: 1),
     'height': ValidationRule(type: 'number', required: true, min: 1),
     'unit': ValidationRule(type: 'string', required: true),
+    'age': ValidationRule(type: 'number', required: false, min: 1, max: 120),
+    'gender': ValidationRule(type: 'string', required: false),
+    'activityLevel': ValidationRule(type: 'string', required: false),
   };
 
   BmicalculatorClient(this.apiKey, {
