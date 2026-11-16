@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-bmicalculator"
-version = "1.2.5"
+version = "1.2.6"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications."
+description = "BMI Calculator is a BMI API that computes Body Mass Index, its category and the healthy weight range for a given height, plus BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets and macronutrient recommendations for fitness and health applications."
 keywords = ["bmi calculator", "bmi api", "bmr calculator", "tdee calculator", "basal metabolic rate"]
 readme = "README.md"
 requires-python = ">=3.9"
