@@ -1,7 +1,7 @@
 BMI Calculator API
 ============
 
-BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
+BMI Calculator is a BMI API that computes Body Mass Index, its category and the healthy weight range for a given height, plus BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets and macronutrient recommendations for fitness and health applications.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.BMICalculator.svg)](https://www.nuget.org/packages/APIVerve.API.BMICalculator)
