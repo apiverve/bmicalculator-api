@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_bmicalculator"
-  spec.version       = "1.2.5"
+  spec.version       = "1.2.6"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "BMI Calculator API - Ruby Client"
-  spec.description   = "BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications."
+  spec.description   = "BMI Calculator is a BMI API that computes Body Mass Index, its category and the healthy weight range for a given height, plus BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets and macronutrient recommendations for fitness and health applications."
   spec.homepage      = "https://apiverve.com/marketplace/bmicalculator?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
