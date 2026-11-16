@@ -1,6 +1,6 @@
 # BMI Calculator API - PHP Package
 
-BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
+BMI Calculator is a BMI API that computes Body Mass Index, its category and the healthy weight range for a given height, plus BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets and macronutrient recommendations for fitness and health applications.
 
 ## Installation
 
