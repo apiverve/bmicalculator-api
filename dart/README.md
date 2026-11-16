@@ -1,6 +1,6 @@
 # BMI Calculator API - Dart/Flutter Client
 
-BMI Calculator computes Body Mass Index along with ideal weight ranges, BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets, and macronutrient recommendations for fitness and health applications.
+BMI Calculator is a BMI API that computes Body Mass Index, its category and the healthy weight range for a given height, plus BMR (Basal Metabolic Rate), TDEE (Total Daily Energy Expenditure), calorie targets and macronutrient recommendations for fitness and health applications.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_bmicalculator.svg)](https://pub.dev/packages/apiverve_bmicalculator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_bmicalculator: ^1.2.5
+  apiverve_bmicalculator: ^1.2.6
 ```
 
 Then run:
